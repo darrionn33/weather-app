@@ -13,3 +13,6 @@ html {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+div.main > img {
+  height: 50px;
+}
