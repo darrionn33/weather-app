@@ -16,3 +16,27 @@ html {
 div.main > img {
   height: 50px;
 }
+body {
+  padding: 10px;
+}
+div.search-div {
+  width: 500px;
+  height: 40px;
+  position: relative;
+}
+
+div.search-div > input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  padding-left: 10px;
+}
+div.member-div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: ghostwhite;
+  border: 1px solid gray;
+}
