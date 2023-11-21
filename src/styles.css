@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap");
 html {
   box-sizing: border-box;
 }
@@ -13,6 +15,60 @@ html {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-div.main > img {
-  height: 50px;
+#root {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  --color-1: #8eaccd;
+  --color-2: #f9f3cc;
+  --color-3: #d7e5ca;
+  --color-4: #d2e0fb;
+
+  background-color: var(--color-3);
+}
+div.weather-card {
+  width: min(500px, 85%);
+  padding: 30px;
+  border-radius: 10px;
+  background-color: var(--color-1);
+  color: var(--color-2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: upDown 2s infinite;
+}
+div.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+div.info > * {
+  font-family: "Yanone Kaffeesatz";
+}
+h1.title {
+  font-family: DynaPuff, system-ui, sans-serif;
+  text-align: center;
+}
+.condition-img {
+  height: 100px;
+  width: 100px;
+}
+
+@keyframes upDown {
+  from,
+  to {
+    top: 0;
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    top: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  }
 }
