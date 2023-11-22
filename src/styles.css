@@ -30,6 +30,26 @@ html {
 
   background-color: var(--color-3);
 }
+#root > p {
+  color: white;
+  padding: 20px;
+}
+#root > p.error {
+  background-color: sienna;
+}
+#root > p.loading {
+  background-color: green;
+  animation: loading 2s infinite;
+}
+@keyframes loading {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
 div.weather-card {
   width: min(500px, 85%);
   padding: 30px;

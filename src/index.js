@@ -3,13 +3,22 @@ import rootRender from "./rootRender";
 import weatherCard from "./components/weatherCard";
 import searchBar from "./components/searchBar";
 
+const loading = document.createElement("p");
+loading.textContent = "Loading...";
+loading.classList.add("loading");
+
+const error = document.createElement("p");
+error.textContent = "Error: Location not found!";
+error.classList.add("error");
+
 const setCity = (city) => {
   rootRender("", "rpc");
+  rootRender(loading);
   getWeather(city);
 };
 
 rootRender(searchBar(setCity));
-
+rootRender(loading);
 const getWeather = async (city = "shillong") => {
   try {
     const response = await fetch(
@@ -17,9 +26,11 @@ const getWeather = async (city = "shillong") => {
     );
     const data = await response.json();
     let weatherData = data;
+    rootRender("", "rpc");
     rootRender(weatherCard(weatherData));
   } catch (e) {
-    console.log(e);
+    rootRender("", "rpc");
+    rootRender(error);
   }
 };
 
