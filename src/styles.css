@@ -90,3 +90,24 @@ div.search-bar > input {
 div.search-bar > input:focus {
   outline: none;
 }
+@media (prefers-color-scheme: dark) {
+  #root {
+    --color-1: #8eaccd;
+    --color-2: #f9f3cc;
+    --color-3: #000000;
+    --color-4: #d2e0fb;
+  }
+  div.weather-card {
+    background-color: transparent;
+    outline: 3px solid var(--color-1);
+  }
+  div.search-bar {
+    background-color: transparent;
+    outline: 3px solid var(--color-2);
+    color: var(--color-2);
+  }
+  div.search-bar > input::placeholder,
+  div.search-bar > input {
+    color: var(--color-2);
+  }
+}
