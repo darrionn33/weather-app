@@ -1,6 +1,14 @@
 import "./styles.css";
 import rootRender from "./rootRender";
 import weatherCard from "./components/weatherCard";
+import searchBar from "./components/searchBar";
+
+const setCity = (city) => {
+  rootRender("", "rpc");
+  getWeather(city);
+};
+
+rootRender(searchBar(setCity));
 
 const getWeather = async (city = "shillong") => {
   try {
@@ -11,18 +19,8 @@ const getWeather = async (city = "shillong") => {
     let weatherData = data;
     rootRender(weatherCard(weatherData));
   } catch (e) {
-    alert(e);
+    console.log(e);
   }
 };
+
 getWeather();
-// const searchBar = () => {
-//   const searchBar = put("div");
-//   const input = put("input", { placeholder: "xyz" });
-//   put(searchBar, input);
-//   input.onchange = () => {
-//     rootRender("", "rpc");
-//     getWeather(input.value);
-//   };
-//   return searchBar;
-// };
-// rootRender(searchBar());
